@@ -19,7 +19,7 @@ $$\sigma=\frac{1}{1+e^{-z}}$$
 <p><img src="https://github.com/Monochrome901/blog/blob/main/Activation/blog2.webp" widht="300" height="250" align="right"><br>
 Sigmoid function is usually used in shallow networks because of problems like sharp damp gradients during backpropagation from hidden layers to the input layers. Sigmoid function saturates and kills the gradient, hence initializing the weights with values too big or too small can create problem. Other problems faced by sigmoid function are slow convergence, and non-zero centered output thereby causing the gradient updates to propagate in different directions.</p>
 <br>
-Other functions like ReLu or tangent function were proposed to remedy some of these drawbacks.
+Functions like ReLu or tangent function were proposed to remedy some of these drawbacks.
 
 <h3>Hyperbolic Tangent Function ( $tanh$ ):</h3>
 
@@ -36,9 +36,7 @@ Derivative of tanh is given by $g(z)=f'(z)=tanh^{2}z$,hence tanh also faces the 
 
 $$f(z)=max(0,z)$$
 
-ReLu function is quite helpful in increasing the training speed of model. This is because the derivative is always either $0$ or $1$ for any value.  This saves up a lot of time in computation during backpropagation. 
-
-<img src="https://github.com/Monochrome901/blog/blob/main/Activation/blog4.png" align="right" width="550" height="250">A general problem with both the sigmoid and tanh functions is that they saturate. This means that large values snap to $1.0$ and small values snap to $-1$ or $0$ for tanh and sigmoid respectively. Further, the functions are only really sensitive to changes around their mid-point of their input, such as $0.5$ for sigmoid and $0.0$ for tanh. ReLU adds more sensitivity to weighted sum and thus this avoids neurons from getting saturated (i.e when there is little or no variation in the output). 
+ReLu function is quite helpful in increasing the training speed of model. This is because the derivative is always either $0$ or $1$ for any value.  This saves up a lot of time in computation during backpropagation. <img src="https://github.com/Monochrome901/blog/blob/main/Activation/blog4.png" align="right" width="550" height="250">A general problem with both the sigmoid and tanh functions is that they saturate. This means that large values snap to $1.0$ and small values snap to $-1$ or $0$ for tanh and sigmoid respectively. Further, the functions are only really sensitive to changes around their mid-point of their input, such as $0.5$ for sigmoid and $0.0$ for tanh. ReLU adds more sensitivity to weighted sum and thus this avoids neurons from getting saturated (i.e when there is little or no variation in the output). 
  
 One of the problem of ReLU is  the one of "dead neurons", which occurs when the neuron gets stuck in the negative side and constantly outputs zero. Because gradient of $0$ is also $0$ , it's unlikely for the neuron to ever recover. This happens when the learning rate is too high or negative bias is quite large. 
 
